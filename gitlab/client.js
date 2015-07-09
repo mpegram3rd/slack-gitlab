@@ -42,7 +42,7 @@ exports.preHandlerProjectDetails = function (req, reply) {
 };
 
 function cachedProjectDetails(projectId) {
-    var cachedValue = projectCache[untappdId];
+    var cachedValue = projectCache[projectId];
     if (cachedValue) {
         if (Date.now() - cachedValue.lastUpdated > projectCache.ttl)
             cachedValue = null;
