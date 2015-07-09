@@ -5,3 +5,4 @@ exports.slackChannel='#yourchannel';
 exports.memes=[
     'http://your.apiserver.net:{your_api_port}/slack-gitlab/memes/codereview-got.jpg'
 ];
+exports.projectCacheTTL=86400000; // 24 hour TTL
