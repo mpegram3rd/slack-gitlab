@@ -1,6 +1,4 @@
-Seshbot code
+Slackbot to report Gitlab events.
 ==============
-This fills the vital gap between Slack.com and Untappd.com.  
+Handles notifying Slack of certain Gitlab events in a lighthearted manner.
 
-Allows the Slack user to send a toast of their colleague's favorite beer to them choosen based on their Untappd 
-ratings. 
