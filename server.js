@@ -1,5 +1,6 @@
 var Hapi = require("hapi");
-var mergeHandler = require('./gitlab/mergehandler.js')
+var mergeHandler = require('./gitlab/mergehandler.js');
+var gitlabClient = require('./gitlab/client.js');
 
 var server = new Hapi.Server();
 server.connection({port: 8889});
@@ -9,6 +10,10 @@ server.route ({
     path: "/slack-gitlab/MR/{projRepo}",
     method: "POST",
     config: {
+        pre : [
+            { method: gitlabClient.preHandlerProjectDetails, assign: 'projDetails' }
+
+        ],
         handler: mergeHandler.handler
     }
 });
