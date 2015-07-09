@@ -19,7 +19,6 @@ exports.preHandlerProjectDetails = function (req, reply) {
                     projectDetails.name = response.body.path_with_namespace;
                     projectDetails.webUrl = response.body.web_url;
 
-                    console.log('Project details retrieved: ' + JSON.stringify(projectDetails));
                     reply(projectDetails);
                 }
 

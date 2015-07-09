@@ -18,6 +18,17 @@ server.route ({
     }
 });
 
+// Meme server
+server.route({
+    method: 'GET',
+    path: '/slack-gitlab/memes/{param*}',
+    handler: {
+        directory : {
+            path: 'meme-images'
+        }
+    }
+});
+
 // Simple logging
 server.on("log", function (event, tags) {
     var tagsJoined = Object.keys(tags).join();
