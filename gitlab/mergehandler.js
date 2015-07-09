@@ -7,15 +7,17 @@ exports.handler = function(req, reply) {
     if (projectDetails && mergeDetails) {
         var targetURL = projectDetails.webUrl + '/merge_requests/' + mergeDetails.iid;
         var webhookMessage = {
-            text : '*Merge Request:* ' + projectDetails.name
+            text : '*Title:* ' + mergeDetails.title
+            + '\n*Merge Request:* ' + projectDetails.name
             + ' *From:* ' + mergeDetails.source_branch
             + ' *To:* ' + mergeDetails.target_branch
-            + '\n*Title:* ' + mergeDetails.title
             + '\n<' + targetURL +'>',
             channel : config.slackChannel,
             attachments : [
                 {
+                    title : 'merge-meme',
                     image_url : pickAnImage(config.memes)
+
                 }
             ]
         };
