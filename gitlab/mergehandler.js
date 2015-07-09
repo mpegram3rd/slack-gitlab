@@ -10,6 +10,7 @@ exports.handler = function(req, reply) {
             text : '*Merge Request:* ' + projectDetails.name
             + ' *From:* ' + mergeDetails.source_branch
             + ' *To:* ' + mergeDetails.target_branch
+            + '\n*Title:* ' + mergeDetails.title
             + '\n<' + targetURL +'>',
             channel : config.slackChannel,
             attachments : [
