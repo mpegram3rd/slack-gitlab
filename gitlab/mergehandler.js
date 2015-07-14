@@ -11,6 +11,7 @@ exports.handler = function(req, reply) {
             + '\n*Merge Request:* ' + projectDetails.name
             + ' *From:* ' + mergeDetails.source_branch
             + ' *To:* ' + mergeDetails.target_branch
+            + ' ' + (mergeDetails.target_branch === 'master' ? ' *:bangbang: ALERT! MASTER BRANCH MERGE :bangbang:*' : '')
             + '\n<' + targetURL +'>',
             channel : config.slackChannel,
             attachments : [
